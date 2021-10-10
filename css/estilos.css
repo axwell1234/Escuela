@@ -1,0 +1,342 @@
+*{
+    margin:0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+.contenedor{
+    background-color: rgb(69, 136, 199);
+    height: 520px;
+    margin: 15px;
+    padding: 30px 0;
+}
+.contenedor h1{
+    color:white;
+    font-size: 40px;
+}
+
+/* Comienza slider*/
+.container-slider{
+    width: 90%;
+    max-width: 900px;
+    margin: auto; /* 94px auto */
+    overflow: hidden;
+    /* box-shadow: 0 0 0 10px #fff, 0 15px 50px; */
+    position: relative;
+}
+
+.slider{
+    display: flex;
+    width: 400%;
+    height: 400px;
+    margin-left: -100%;
+}
+
+.slider__section{
+    width: 100%;
+}
+
+.slider__img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.slider__btn{
+    position:absolute;
+    width: 40px;
+    height: 40px;
+    background: rgba(255,255,255,0.7);
+    top:50%;
+    transform: translateY(-50%);
+    font-size: 30px;
+    font-weight: bold;
+    font-family: monospace;
+    text-align: center;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.slider__btn:hover{
+    background: #fff;
+}
+.slider__btn--left{
+    left: 10px;
+}
+.slider__btn--right{
+    right: 10px;
+}
+/* finaliza el slider */
+
+
+/* comienza link */
+.links{
+    display:flex;
+    flex-wrap: wrap;
+    width: 85%;
+    height: 75px;
+    /* border: red 2px solid; */
+    margin: auto;
+    margin-bottom: 16px;
+}
+
+.links a{
+    text-decoration: none;
+    margin-left:4px;
+    display: inline-block;
+    width: 180px;
+    height: 30px;
+    border-bottom-right-radius: 16px;
+    color:#fff;
+    text-align: center;
+    line-height: 30px;
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.links .uno{
+    background-color: rgb(106, 175, 233);
+}
+.links .dos{
+    background-color: rgb(201, 57, 110);
+}
+.links .tres{
+    background-color: rgb(223, 168, 80);
+}
+.links .cuatro{
+    background-color: rgb(211, 134, 181);
+}
+.links .cinco{
+    background-color: rgb(157, 190, 86);
+}
+.links .seis{
+    background-color: rgb(194, 58, 89);
+}
+.links .siete{
+    background-color: rgb(138, 147, 197);
+}
+.links .ocho{
+    background-color: rgb(154, 150, 157);
+}
+.links .nueve{
+    background-color: rgb(104, 177, 226);
+}
+
+/* finaliza link */
+
+
+section{
+    text-align: center;
+    height: 640px;
+    padding-top:10px;
+    background-color: rgb(91, 155, 213);
+    margin: 0 40px;
+    /* margin-top: 78px; */
+}
+
+section .cta{
+    text-decoration: none;
+    display: inline-block;
+    color:white;
+    background-color: black;
+    border-radius: 15px;
+    width: 250px;
+    height: 90px; 
+    font-size: 23px;
+    line-height: 90px;
+    cursor: pointer;
+    margin-top: 30px;
+}
+section .grabacion{
+    margin-top: 23px;
+}
+section .grabacion video{
+    width: 790px;
+    height: 450px;
+}
+
+
+
+/* inicio de Botones de iconos flotantes */
+#boton-mas{
+    display: none;
+}
+
+.iconos{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+}
+
+.redes a, .icon-mas{
+    /* para que este en linea vertical los iconos */
+    display: block;
+    text-decoration: none;
+    background:#cc2b2b;
+    color:white;
+    width: 50px;
+    height:50px;
+    line-height:50px;
+    text-align:center;
+    border-radius: 50%;
+    /* sombra de la caja  */
+    box-shadow: 0px 1px 10px rgba(0,0,0,0.4);
+    font-size:25px;
+
+    /* añadimos una transicion */
+    transition: all 500ms ease;
+}
+
+.redes a:hover{
+    background: #fff;
+    color: #cc2b2b;
+}
+
+.redes a{
+    margin-bottom: -15px;
+    opacity:0;
+    /* hidden=ocultar */
+    visibility: hidden;
+}
+/* alt+126 */
+#boton-mas:checked~ .redes a{
+    margin-bottom:10px;
+    opacity:1;
+    visibility: visible;
+}
+
+/* codigo para el boton mas */
+.icon-mas{
+    cursor:pointer;
+    background: #f44141;
+    /* tamaño del boton mas */
+    /* font-size:18px; */
+}
+
+#boton-mas:checked~ .boton-mas .icon-mas{
+    /* el mas(+) rota unos 137 grados */
+    transform: rotate(137deg);
+    font-size: 24px;
+}
+/* final de bootones flotantes */
+
+
+/* Inicio de ventana modal */
+.modal-container{
+    z-index:1000;
+    position: fixed;  /* esto se puso al final y posisiono el cuadro arriba */
+    width: 100%;
+    height: 100vh; /* esto se llma aviopur entorno de plantilla  */
+    top: 0;
+    left: 0;
+        
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+     
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.4);
+    }
+     
+    .modal{
+        width: 48%;
+        height: 75%;
+        background:rgb(224, 223, 223);
+        background-size:cover;
+        /*text-align: center;*/
+        overflow: hidden;
+        flex-direction: column;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        border-radius: 10px;
+        position: relative; /* se agrega para que close x no salga del cuaadro */
+        transition:transform 1s;
+        transform: translateY(0%);
+    }
+    
+    .close{
+    position:absolute;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border-radius:50%;
+    background-color:#c44a4a;
+    top:20px;
+    right: 20px;
+    color:white;
+    line-height: 30px;
+    cursor:pointer;
+    text-align: center;
+    }
+    
+    .modal-close{
+    transform:translateY(-200%);
+    
+    }
+    .formulario{
+        width: 100%;
+        margin-top: 16px;
+        padding-top: 14px;
+        
+    }
+    
+    .two-inputs{
+        display:flex;
+        gap: 50px;
+        margin-bottom: 25px;
+    }
+
+    label{
+        display:block;
+       font-size: 17px;
+       font-weight: bold;
+       text-transform: capitalize;
+       font-family:sans-serif;
+       margin-bottom: 7px;
+    }
+
+    input{
+        padding: 10px 9px;
+        width:250px;
+        border-radius: 5px;
+        outline:none;
+        border:1px solid white;
+    }
+    
+    form{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .box{
+        display: flex;
+        width:87%;
+    }
+
+    .box input{
+        width:20px;
+    }
+
+    .box span{
+        font-weight: bold;
+        font-size: 13px;
+        font-family: sans-serif;
+    }
+
+    .btn button{
+        border:none;
+        background-color: rgb(0,0,0);
+        width: 160px;
+        height: 40px;
+        color: rgb(224, 223, 223);
+        cursor:pointer;
+        font-weight: bold;
+        font-size: 14px;
+        margin-top: 16px;
+    }
+/* final de ventana modal */
+
